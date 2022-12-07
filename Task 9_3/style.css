@@ -1,0 +1,23 @@
+.errorMessage{
+    color: brown;
+}
+.btnRequest{
+    background-color: blue;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 5px;
+}
+.result{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.image_result{
+    margin: 20px 20px;
+    width: 200px;
+}
+.image-block_author{
+    padding-left: 20px;
+}
