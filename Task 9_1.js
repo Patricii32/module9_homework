@@ -20,7 +20,9 @@
     <prof>driver</prof>
   </student>
 </list>
-JS-объект:
+
+
+Результат:
 
 {
   list: [
@@ -29,9 +31,7 @@ JS-объект:
   ]
 }*/
 
-const parser = new DOMParser();
-const xmlString =`
-<list>
+const xmlString = `<list>
   <student>
     <name lang="en">
       <first>Ivan</first>
@@ -48,20 +48,27 @@ const xmlString =`
     <age>58</age>
     <prof>driver</prof>
   </student>
-</list>`;
-
-const xmlDOM = parser.parseFromString(xmlString, "text/xml");
-let result = [];
-
-const students = xmlDOM.querySelectorAll("student");
-students.forEach(node => {
-  let student ={
-    name: `${node.querySelector("first").textContent} ${node.querySelector("second").textContent}`,
-  	age: node.querySelector('age').textContent,
-    prof: node.querySelector('prof').textContent, 
-    lang: node.querySelector('name').getAttribute('lang'),
-  }	
-  result.push(student);
-  });
-
-console.log(result);
+</list>`
+const parser = new DOMParser();
+let arr = [];
+let obj = {"list": arr,};
+const xmlDom =  parser.parseFromString(xmlString, "text/html");
+const students = xmlDom.querySelectorAll("student");
+students.forEach(item => {
+    const name = item.querySelector("name");
+    const nameFirst = name.querySelector("first");
+    const nameSecond = name.querySelector("second");
+    const age = item.querySelector("age");
+    const prof = item.querySelector("prof");
+    const lang = name.getAttribute("lang");
+    
+    const arrItem = {
+        "name": (nameFirst.textContent +" "+ nameSecond.textContent),
+        "age": age.textContent,
+        "prof": prof.textContent,
+        "lang": lang
+    }
+    arr.push(arrItem);
+    
+})
+console.log(obj);
