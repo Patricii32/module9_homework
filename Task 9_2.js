@@ -26,33 +26,36 @@ JS-объект:
 }
 */
 
-const jsonString =`
-{
- "list": [
-  {
-   "name": "Petr",
-   "age": "20",
-   "prof": "mechanic"
-  },
-  {
-   "name": "Vova",
-   "age": "60",
-   "prof": "pilot"
-  }
- ]
-}
-`;
-const arr = [];
+const jsonString = `{
+  "list": [
+   {
+    "name": "Petr",
+    "age": "20",
+    "prof": "mechanic"
+   },
+   {
+    "name": "Vova",
+    "age": "60",
+    "prof": "pilot"
+   }
+  ]
+ }`
+let arr = [];
+let objResult ={
+  "list": arr,
+}   
 const data = JSON.parse(jsonString);
 const list = data.list;
-
-list.forEach(list =>{
-  let person ={
-    name: list.name,
-    age: list.age,
-    prof: list.prof,
-   }
-  arr.push(person);
+list.forEach(human => {
+  const name = human.name;
+  const age = human.age;
+  const prof = human.prof;
+  const objHuman = {
+      "name": name,
+      "age": age,
+      "prof": prof,
+  }
+  arr.push(objHuman);
 });
+console.log(objResult);
 
-console.log(arr);
