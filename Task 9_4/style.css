@@ -1,0 +1,14 @@
+.form_errorMessage{
+    color: red;
+    font-size: 20px;
+}
+.form_input{
+    margin-bottom: 20px;
+    width: 200px;
+    height: 20px;
+}
+.form_button{
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
