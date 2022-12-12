@@ -1,0 +1,18 @@
+.form_input{
+    width: 180px;
+    height: 20px;
+}
+.form_btn{
+    width: 100px;
+    height: 30px;
+    margin-top: 20px;
+}
+.form_error{
+    font-size: 20px;
+    color: red;
+}
+.result{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
